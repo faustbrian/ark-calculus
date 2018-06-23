@@ -23,6 +23,11 @@ use Litipk\BigNumbers\Decimal;
 class BigNumber
 {
     /**
+     * @var int
+     */
+    const ARKTOSHI = 10 ** 8;
+
+    /**
      * Create a new instance.
      *
      * @param \Litipk\BigNumbers\Decimal $value
@@ -145,6 +150,6 @@ class BigNumber
      */
     public function toHuman(): string
     {
-        return (string) $this->value->div(static::fromString(ARKTOSHI));
+        return (string) $this->value->div(static::fromString(self::ARKTOSHI));
     }
 }

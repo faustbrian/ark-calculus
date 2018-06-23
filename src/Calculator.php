@@ -57,7 +57,7 @@ class Calculator
     public function perBlock(int $value): BigNumber
     {
         if ($value >= $this->votingPool) {
-            return BigNumber::create(422)->times(ARKTOSHI);
+            return BigNumber::create(422)->times(self::ARKTOSHI);
         }
 
         return BigNumber::create(200000000)
