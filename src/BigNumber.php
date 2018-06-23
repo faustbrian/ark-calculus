@@ -62,7 +62,7 @@ class BigNumber
             return $value;
         }
 
-        return Decimal::fromString($value, 8);
+        return Decimal::fromString((string) $value, 8);
     }
 
     /**
