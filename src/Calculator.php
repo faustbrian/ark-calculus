@@ -28,12 +28,12 @@ class Calculator
     /**
      * @var int
      */
-    private $profitShare;
+    protected $profitShare;
 
     /**
      * @var int
      */
-    private $votingPool;
+    protected $votingPool;
 
     /**
      * Create a new calculator instance.
