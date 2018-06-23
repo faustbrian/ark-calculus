@@ -1,0 +1,39 @@
+{
+    "name": "arkx/ark-calculus",
+    "description": "Simple TBW & Profit Share Calculator for PHP",
+    "keywords": ["calculus", "ark", "blockchain", "crypto", "currency"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Brian Faust",
+        "email": "hello@brianfaust.me",
+        "homepage": "https://brianfaust.me"
+    }],
+    "require": {
+        "php": "^7.1",
+        "litipk/php-bignumbers": "^0.8.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ArkX\\Calculus\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ArkX\\Tests\\Calculus\\": "tests"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
