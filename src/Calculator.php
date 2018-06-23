@@ -52,7 +52,7 @@ class Calculator
      *
      * @param int $value
      *
-     * @return \App\Math\BigNumber
+     * @return \ArkX\Calculus\BigNumber
      */
     public function perBlock(int $value): BigNumber
     {
@@ -72,7 +72,7 @@ class Calculator
      *
      * @param int $value
      *
-     * @return \App\Math\BigNumber
+     * @return \ArkX\Calculus\BigNumber
      */
     public function perDay(int $value): BigNumber
     {
@@ -84,7 +84,7 @@ class Calculator
      *
      * @param int $value
      *
-     * @return \App\Math\BigNumber
+     * @return \ArkX\Calculus\BigNumber
      */
     public function perWeek(int $value): BigNumber
     {
@@ -96,7 +96,7 @@ class Calculator
      *
      * @param int $value
      *
-     * @return \App\Math\BigNumber
+     * @return \ArkX\Calculus\BigNumber
      */
     public function perMonth(int $value): BigNumber
     {
@@ -108,7 +108,7 @@ class Calculator
      *
      * @param int $value
      *
-     * @return \App\Math\BigNumber
+     * @return \ArkX\Calculus\BigNumber
      */
     public function perQuarter(int $value): BigNumber
     {
@@ -120,7 +120,7 @@ class Calculator
      *
      * @param int $value
      *
-     * @return \App\Math\BigNumber
+     * @return \ArkX\Calculus\BigNumber
      */
     public function perYear(int $value): BigNumber
     {
@@ -132,9 +132,9 @@ class Calculator
      *
      * @param int $value
      *
-     * @return float
+     * @return \ArkX\Calculus\BigNumber
      */
-    public function voteWeight(int $value): float
+    public function voteWeight(int $value): BigNumber
     {
         if (0 === $this->votingPool) {
             return 0;
