@@ -1,7 +1,7 @@
 # Ark Calculus
 
 <p align="center">
-    <img src="https://github.com/arkx/ark-calculus/raw/master/banner.png" />
+    <img src="https://github.com/arkx-ecosystem/ark-calculus/raw/master/banner.png" />
 </p>
 
 > Simple TBW & Profit Share Calculator for PHP.
