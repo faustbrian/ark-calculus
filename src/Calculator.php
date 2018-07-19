@@ -36,6 +36,11 @@ class Calculator
     protected $votingPool;
 
     /**
+     * @var int
+     */
+    protected $reward = 200000000;
+
+    /**
      * Create a new calculator instance.
      *
      * @param int $votingPool
@@ -60,7 +65,7 @@ class Calculator
             return BigNumber::create(422)->times(self::ARKTOSHI);
         }
 
-        return BigNumber::create(200000000)
+        return BigNumber::create($this->reward)
             ->times($this->profitShare / 100)
             ->times($value)
             ->dividedBy($this->votingPool)
@@ -143,5 +148,19 @@ class Calculator
         return BigNumber::create($value)
             ->dividedBy($this->votingPool)
             ->times(100);
+    }
+
+    /**
+     * Set the reward per block.
+     *
+     * @param int $value
+     *
+     * @return \ArkX\Calculus\Calculator
+     */
+    public function setReward(int $value): self
+    {
+        $this->reward = $value;
+
+        return $this;
     }
 }
