@@ -151,6 +151,20 @@ class Calculator
     }
 
     /**
+     * Set the profit share percentage.
+     *
+     * @param int $value
+     *
+     * @return \ArkX\Calculus\Calculator
+     */
+    public function setProfitShare(int $value): self
+    {
+        $this->profitShare = $value;
+
+        return $this;
+    }
+
+    /**
      * Set the reward per block.
      *
      * @param int $value
