@@ -38,7 +38,7 @@ class Calculator
     /**
      * @var int
      */
-    protected $reward = 200000000;
+    protected $reward = 2 * 10 ** 8;
 
     /**
      * Create a new calculator instance.
@@ -151,6 +151,40 @@ class Calculator
     }
 
     /**
+     * Get the voting pool.
+     *
+     * @return int
+     */
+    public function getVotingPool(): int
+    {
+        return $this->votingPool;
+    }
+
+    /**
+     * Set the voting pool.
+     *
+     * @param int $value
+     *
+     * @return \ArkX\Calculus\Calculator
+     */
+    public function setVotingPool(int $value): self
+    {
+        $this->votingPool = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get the profit share percentage.
+     *
+     * @return int
+     */
+    public function getProfitShare(): int
+    {
+        return $this->profitShare;
+    }
+
+    /**
      * Set the profit share percentage.
      *
      * @param int $value
@@ -162,6 +196,16 @@ class Calculator
         $this->profitShare = $value;
 
         return $this;
+    }
+
+    /**
+     * Get the reward per block.
+     *
+     * @return int
+     */
+    public function getReward(): int
+    {
+        return $this->reward;
     }
 
     /**

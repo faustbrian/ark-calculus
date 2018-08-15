@@ -81,6 +81,36 @@ class CalculatorTest extends TestCase
         $this->assertSame($actual->toInteger(), $expected);
     }
 
+    /** @test */
+    public function it_sets_the_voting_pool()
+    {
+        $instance = $this->getInstance()->setVotingPool(1);
+
+        $actual = $instance->getVotingPool();
+
+        $this->assertSame($actual, 1);
+    }
+
+    /** @test */
+    public function it_sets_the_profit_share()
+    {
+        $instance = $this->getInstance()->setProfitShare(1);
+
+        $actual = $instance->getProfitShare();
+
+        $this->assertSame($actual, 1);
+    }
+
+    /** @test */
+    public function it_sets_the_reward()
+    {
+        $instance = $this->getInstance()->setReward(1);
+
+        $actual = $instance->getReward();
+
+        $this->assertSame($actual, 1);
+    }
+
     private function getInstance(): Calculator
     {
         return new Calculator(1000, 100);
