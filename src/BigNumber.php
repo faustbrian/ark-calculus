@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace ArkX\Calculus;
 
-use Litipk\BigNumbers\Decimal;
+use Brick\Math\BigDecimal;
 
 /**
  * This is the big number class.
@@ -30,7 +30,7 @@ class BigNumber
     /**
      * Create a new instance.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      */
     private function __construct($value)
     {
@@ -40,7 +40,7 @@ class BigNumber
     /**
      * Create a new instance.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      *
      * @return \App\Math\BigNumber
      */
@@ -52,65 +52,65 @@ class BigNumber
     /**
      * Create a new "Decimal" instance from a string.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      *
-     * @return \Litipk\BigNumbers\Decimal
+     * @return \Brick\Math\BigDecimal
      */
-    public static function fromString($value): Decimal
+    public static function fromString($value): BigDecimal
     {
         if ($value instanceof Decimal) {
             return $value;
         }
 
-        return Decimal::fromString((string) $value, 8);
+        return BigDecimal::of((string) $value);
     }
 
     /**
      * Add the given value to the current value.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      *
      * @return \App\Math\BigNumber
      */
     public function plus($value): BigNumber
     {
-        return new static($this->value->add(static::fromString($value)));
+        return new static($this->value->plus(static::fromString($value)));
     }
 
     /**
      * Subtract the given value to the current value.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      *
      * @return \App\Math\BigNumber
      */
     public function minus($value): BigNumber
     {
-        return new static($this->value->sub(static::fromString($value)));
+        return new static($this->value->minus(static::fromString($value)));
     }
 
     /**
      * Multiply the current value by the given value.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      *
      * @return \App\Math\BigNumber
      */
     public function times($value): BigNumber
     {
-        return new static($this->value->mul(static::fromString($value)));
+        return new static($this->value->multipliedBy(static::fromString($value)));
     }
 
     /**
      * Divide the current value by the given value.
      *
-     * @param \Litipk\BigNumbers\Decimal $value
+     * @param \Brick\Math\BigDecimal $value
      *
      * @return \App\Math\BigNumber
      */
     public function dividedBy($value): BigNumber
     {
-        return new static($this->value->div(static::fromString($value)));
+        return new static($this->value->dividedBy(static::fromString($value)));
     }
 
     /**
@@ -120,7 +120,7 @@ class BigNumber
      */
     public function toFloat(): float
     {
-        return $this->value->asFloat();
+        return $this->value->toFloat();
     }
 
     /**
@@ -130,7 +130,7 @@ class BigNumber
      */
     public function toInteger(): int
     {
-        return $this->value->asInteger();
+        return $this->value->toInt();
     }
 
     /**
@@ -150,6 +150,6 @@ class BigNumber
      */
     public function toHuman(): string
     {
-        return (string) $this->value->div(static::fromString(self::ARKTOSHI));
+        return (string) $this->value->dividedBy(static::fromString(self::ARKTOSHI));
     }
 }

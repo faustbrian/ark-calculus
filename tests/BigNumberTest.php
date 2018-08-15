@@ -70,13 +70,13 @@ class BigNumberTest extends TestCase
     /** @test */
     public function to_string()
     {
-        $this->assertSame($this->getInstance()->toString(), '200000000.00000000');
+        $this->assertSame($this->getInstance()->toString(), '200000000');
     }
 
     /** @test */
     public function to_human()
     {
-        $this->assertSame($this->getInstance()->toHuman(), '2.0000000000000000');
+        $this->assertSame($this->getInstance()->toHuman(), '2');
     }
 
     private function getInstance(): BigNumber
