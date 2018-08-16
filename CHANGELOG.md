@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+## 0.1.1
+
+### Changed
+- Use Block Reward as maximum for overflow calculations
+
 ## 0.1.0
 
 - Initial Release
