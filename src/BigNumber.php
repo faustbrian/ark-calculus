@@ -116,12 +116,13 @@ class BigNumber
      * Divide the current value by the given value.
      *
      * @param \Brick\Math\BigDecimal $value
+     * @param int                    $scale
      *
      * @return \App\Math\BigNumber
      */
-    public function dividedBy($value): BigNumber
+    public function dividedBy($value, int $scale = self::SCALE): BigNumber
     {
-        return new static($this->value->dividedBy(static::fromString($value), self::SCALE, self::ROUNDING));
+        return new static($this->value->dividedBy(static::fromString($value), $scale, self::ROUNDING));
     }
 
     /**
