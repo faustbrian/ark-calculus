@@ -146,7 +146,7 @@ class Calculator
         }
 
         return BigNumber::create($value)
-            ->dividedBy($this->votingPool)
+            ->dividedBy($this->votingPool, 8)
             ->times(100);
     }
 
